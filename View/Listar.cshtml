@@ -1,0 +1,38 @@
+﻿namespace ProvaFinal2.View
+{
+    @page
+@model ProvaFinal2.View.Listar
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<h1>Produtos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model.Produtos)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Preco</td>
+                <td>@(produto.Status ? "Ativo" : "Inativo")</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@produto.Id">Editar</a> |
+                    <a asp-page="./Delete" asp-route-id="@produto.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create" class="btn btn-primary">Adicionar Novo Produto</a>
+
+}

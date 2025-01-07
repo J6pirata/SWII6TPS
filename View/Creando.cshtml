@@ -1,0 +1,26 @@
+﻿namespace ProvaFinal2.View{
+@page
+@model ProvaFinal2.View.Creando
+@{
+    ViewData["Title"] = "Adicionar Produto";
+}
+
+<h1>Adicionar Produto</h1>
+
+<form method="post">
+    <div>
+        <label>Nome:</label>
+        <input asp-for="Produto.Nome" class="form-control" />
+    </div>
+    <div>
+        <label>Preço:</label>
+        <input asp-for="Produto.Preco" class="form-control" />
+    </div>
+    <div>
+        <label>Status:</label>
+        <input asp-for="Produto.Status" type="checkbox" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+}
